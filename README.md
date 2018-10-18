@@ -1,1 +1,0 @@
-# courier-sdk-android-sample

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <Button
+            android:id="@+id/activationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="activate"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="63dp" />
+
+        <Button
+            android:id="@+id/mobileWalletButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mobile wallets"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="182dp" />
+
+        <Button
+            android:id="@+id/transactionRecordButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="records"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="301dp" />
+
+        <Button
+            android:id="@+id/paymentAuthorizationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="payment auth"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="408dp" />
+
+        <Button
+            android:id="@+id/voidTransactionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="void transaction"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="491dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
