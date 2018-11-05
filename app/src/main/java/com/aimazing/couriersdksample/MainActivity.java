@@ -23,6 +23,8 @@ import com.aimazing.couriersdk.VoidTransactionError;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     Button activationButton, mobileWalletButton, transactionRecordButton, paymentAuthorizationButton, voidTransactionButton;
@@ -31,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
     Payment payment;
     PaymentRecord paymentRecord;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         activation = new Activation(this);
         payment = new Payment(this);
@@ -111,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("onClick", "paymentAuthorizationButton");
 
                 payment.ecodAuthorize(
-                        "elb573826172", "Tokopedia", "Sudomo Gunawan",
+                        "elb573826179", "Tokopedia", "Sudomo Gunawan",
                         "Jl Letjen Haryono MT Kav 10 Ged Mugi Griya Lt 5 Suite 502, Dki Jakarta",
                         "+622127899765", "2", "BARCODE", "8000407319799600", "2000",
                         new EcodAuthorizeCallback() {
