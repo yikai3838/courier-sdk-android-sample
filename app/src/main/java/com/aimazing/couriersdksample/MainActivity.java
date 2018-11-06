@@ -20,14 +20,30 @@ import com.aimazing.couriersdk.PaymentRecord;
 import com.aimazing.couriersdk.VoidTransactionCallback;
 import com.aimazing.couriersdk.VoidTransactionError;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.scheme.PlainSocketFactory;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button activationButton, mobileWalletButton, transactionRecordButton, paymentAuthorizationButton, voidTransactionButton;
+    Button buttonButton, activationButton, mobileWalletButton, transactionRecordButton, paymentAuthorizationButton, voidTransactionButton;
 
     Activation activation;
     Payment payment;
@@ -48,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         transactionRecordButton = (Button)findViewById(R.id.transactionRecordButton);
         paymentAuthorizationButton = (Button)findViewById(R.id.paymentAuthorizationButton);
         voidTransactionButton = (Button)findViewById(R.id.voidTransactionButton);
+
+        buttonButton = (Button)findViewById(R.id.buttonButton);
 
         activationButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,5 +178,54 @@ public class MainActivity extends AppCompatActivity {
                 );
             }
         });
+
+        buttonButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("HEY", "HEY");
+
+                tt();
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
+
+    private void tt() {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String total = "";
+                try {
+                    HttpClient client = new DefaultHttpClient();
+                    HttpGet request = new HttpGet("http://www.vogella.com");
+                    HttpResponse response = client.execute(request);
+
+                    Log.e("After response", total);
+
+                    // Get the response
+                    BufferedReader rd = new BufferedReader
+                            (new InputStreamReader(
+                                    response.getEntity().getContent()));
+
+                    String line = "";
+                    while ((line = rd.readLine()) != null) {
+                        Log.e("total", total);
+                        total = total + line;
+                    }
+
+                    Log.e("total", total);
+                } catch (IOException e) {
+
+                }
+            }
+        }).start();
+
     }
 }
