@@ -131,9 +131,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("onClick", "paymentAuthorizationButton");
 
                 payment.ecodAuthorize(
-                        "elb573826179", "Tokopedia", "Sudomo Gunawan",
-                        "Jl Letjen Haryono MT Kav 10 Ged Mugi Griya Lt 5 Suite 502, Dki Jakarta",
-                        "+622127899765", "2", "BARCODE", "8000407319799600", "2000",
+                        "elb573826179", "", "", "", "",
+                        "2", "BARCODE", "8000407319799600", "2000",
                         new EcodAuthorizeCallback() {
                             @Override
                             public void onSuccess(JSONObject jsonObject) {
@@ -158,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         voidTransactionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                payment.voidTransaction("c359650ffcacfb9f6c1e417e2876cae2", "3838438",
+                payment.voidTransaction("c359650ffcacfb9f6c1e417e2876cae2", "elb573826179",
                     new VoidTransactionCallback() {
                         @Override
                         public void onSuccess(JSONObject jsonObject) {
