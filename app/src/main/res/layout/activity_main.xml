@@ -5,60 +5,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/transactionIDEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Transaction ID"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/paymentAmountEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="paymentAmount"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/launchPaymentPageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="launch" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/activationButton"
+            android:id="@+id/getPaymentRecordsButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="activate"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="63dp" />
+            android:layout_weight="1"
+            android:text="Get Payment Records" />
 
         <Button
-            android:id="@+id/mobileWalletButton"
+            android:id="@+id/isActivatedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="mobile wallets"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="182dp" />
+            android:layout_weight="1"
+            android:text="isActivated" />
 
         <Button
-            android:id="@+id/transactionRecordButton"
+            android:id="@+id/activateButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="records"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="301dp" />
-
-        <Button
-            android:id="@+id/paymentAuthorizationButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="payment auth"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="408dp" />
-
-        <Button
-            android:id="@+id/voidTransactionButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="void transaction"
-            tools:layout_editor_absoluteX="148dp"
-            tools:layout_editor_absoluteY="491dp" />
-
-        <Button
-            android:id="@+id/buttonButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_weight="1"
+            android:text="activate" />
 
     </LinearLayout>
 
