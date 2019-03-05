@@ -105,9 +105,16 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onError(GetPaymentRecordsError _error) {
+                    public void onError(final GetPaymentRecordsError _error) {
                         Log.e("getPaymentRecordsButton", "onError() " + _error);
-                        resultTextView.setText("onError " + _error);
+
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                resultTextView.setText("onError " + _error);
+                            }
+                        });
+
                     }
                 });
             }
@@ -118,7 +125,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e("isActivatedButton", "clicked");
-                resultTextView.setText("isActivated() " + sdkActivation.isActivated());
+
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        resultTextView.setText("isActivated() " + sdkActivation.isActivated());
+                    }
+                });
+
             }
         });
 
@@ -132,13 +146,27 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess() {
                         Log.e("activateButton", "onSuccess()");
-                        resultTextView.setText("activate() onSuccess()");
+
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                resultTextView.setText("activate() onSuccess()");
+                            }
+                        });
+
                     }
 
                     @Override
-                    public void onError(ActivateError err) {
+                    public void onError(final ActivateError err) {
                         Log.e("activateButton", "onError(): " + err);
-                        resultTextView.setText("activate() onError()" + err);
+
+                        MainActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                resultTextView.setText("activate() onError()" + err);
+                            }
+                        });
+
                     }
                 });
             }
