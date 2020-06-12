@@ -12,12 +12,12 @@ import android.widget.TextView;
 import com.aimazing.couriersdk.ActivateCallback;
 import com.aimazing.couriersdk.ActivateError;
 import com.aimazing.couriersdk.Activation;
-import com.aimazing.couriersdk.GetPaymentRecordsCallback;
-import com.aimazing.couriersdk.GetPaymentRecordsError;
+//import com.aimazing.couriersdk.GetPaymentRecordsCallback;
+//import com.aimazing.couriersdk.GetPaymentRecordsError;
 import com.aimazing.couriersdk.Payment;
 import com.aimazing.couriersdk.PaymentCallback;
 import com.aimazing.couriersdk.PaymentError;
-import com.aimazing.couriersdk.PaymentRecord;
+//import com.aimazing.couriersdk.PaymentRecord;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,7 +25,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     Activation sdkActivation;
-    PaymentRecord paymentRecord;
+    //PaymentRecord paymentRecord;
     Payment payment;
 
     EditText transactionIDEditText, paymentAmountEditText;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sdkActivation = new Activation(this);
-        paymentRecord = new PaymentRecord(this);
+        //paymentRecord = new PaymentRecord(this);
         payment = new Payment(this);
 
         transactionIDEditText = findViewById(R.id.transactionIDEditText);
@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         getPaymentRecordsButton = findViewById(R.id.getPaymentRecordsButton);
+        /*
         getPaymentRecordsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+        */
 
         isActivatedButton = findViewById(R.id.isActivatedButton);
         isActivatedButton.setOnClickListener(new View.OnClickListener() {
